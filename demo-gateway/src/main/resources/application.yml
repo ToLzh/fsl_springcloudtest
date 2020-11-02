@@ -1,0 +1,47 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: demo-gateway
+  cloud:
+    gateway:
+      routes:
+#        - id: mytest
+#          uri: http://ityouknow.com
+#          predicates:
+#            - After=2020-02-20T06:06:06+08:00[Asia/Shanghai] # 指 这时间之后访问有效
+#            - Before=2020-12-20T06:06:06+08:00[Asia/Shanghai]   # 指 这时间之前访问有效
+#            - Between=2020-01-20T06:06:06+08:00[Asia/Shanghai], 2020-12-20T06:06:06+08:00[Asia/Shanghai]  # 指 这时间段访问有效
+#            - Cookie=ityouknow,kee.e   # 无携带cookie name：ityouknow  value:kee.e 则无法访问
+#            - Header=X-Request-Id,\d+    # 请求头= 参数 ， 值 （正则表达式）
+#            - Host=**.ityouknow.com    # 请求host地址 要 xx.ityouknow.com 才能访问成功
+#            - Method=GET     # 请求模式
+#            - Path=/foo/{id}   # 路径匹配
+#            - Query=smile      # 携带参数 smile 菜可以访问
+#            - Query=name
+#            - Query=smile,c   # 携带参数 smile 且 值为 c 才可以访问
+#            - RemoteAddr=192.168.1.1/24
+
+#        - id: client1
+#          uri: http://127.0.0.1:8081
+#          predicates:
+#            - Path=/client/hello
+#            - Weight=service1,60
+#
+#        - id: client2
+#          uri: http://127.0.0.1:8082
+#          predicates:
+#            - Path=/client/hello
+#            - Weight=service1,60
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+
+
+
