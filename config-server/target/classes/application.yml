@@ -9,9 +9,10 @@ spring:
       server:
         git:
           uri: https://github.com/ToLzh/fsl_springcloudtest.git
-          basedir: D:\ideaProjects\fsl
-          search-paths: /**
-
+#          basedir: D:\ideaProjects\fsl
+          search-paths:
+            - config
+          
 eureka:
   client:
     register-with-eureka: true
