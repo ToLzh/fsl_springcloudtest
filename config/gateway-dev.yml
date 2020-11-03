@@ -1,7 +1,7 @@
-spring:
-  cloud:
-    gateway:
-      routes:
+#spring:
+#  cloud:
+#    gateway:
+#      routes:
 #        - id: mytest
 #          uri: http://ityouknow.com
 #          predicates:
@@ -18,10 +18,10 @@ spring:
 #            - Query=smile,c   # 携带参数 smile 且 值为 c 才可以访问
 #            - RemoteAddr=192.168.1.1/24
 
-        - id: client1
-          uri: http://127.0.0.1:8081
-          predicates:
-            - Path=/client/hello
+#        - id: client1
+#          uri: http://127.0.0.1:8081
+#          predicates:
+#            - Path=/client/hello
 #            - Weight=service1,60
 #
 #        - id: client2
