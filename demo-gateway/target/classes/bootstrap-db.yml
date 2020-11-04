@@ -1,0 +1,28 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: demo-gateway
+  cloud:
+    config:
+      label: master
+      profile: dev
+      uri: http://localhost:9999/
+      fail-fast: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+
+
+

@@ -24,3 +24,9 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
   instance:
     instance-id: ${spring.cloud.client.ip-address}:${server.port}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

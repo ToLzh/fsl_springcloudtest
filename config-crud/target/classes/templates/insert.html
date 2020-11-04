@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>添加配置</title>
+    <style>
+        td{
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+<form method="post" th:action="@{/properties/insert}">
+    <table>
+        <tr>
+            <td>key1:</td>
+            <td><input type="text" name="key1" th:value="${user?.key1}"/></td>
+        </tr>
+        <tr>
+            <td>value1:</td>
+            <td><input type="text" name="value1" th:value="${user?.value1}"/></td>
+        </tr>
+        <tr>
+            <td>application:</td>
+            <td><input type="text" name="application" th:value="${user?.application}"/></td>
+        </tr>
+        <tr>
+            <td>profile:</td>
+            <td><input type="text" name="profile" th:value="${user?.profile}"/></td>
+        </tr>
+        <tr>
+            <td>label:</td>
+            <td><input type="text" name="label" th:value="${user?.label}"/></td>
+        </tr>
+    </table>
+    <input type="submit" value="确定"/>
+</form>
+</body>
+
+</html>

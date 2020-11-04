@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>所有配置信息</title>
+    <style>
+        td{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<table border="1" cellspacing="0" align="center">
+    <tr><td>id</td><td>key</td><td>value</td><td>application</td><td>profile</td><td>label</td><td>修改</td><td>删除</td></tr>
+    <tr th:each="u : ${list}">
+        <td th:text="${u.id}"></td>
+        <td th:text="${u.key1}"></td>
+        <td th:text="${u.value1}"></td>
+        <td th:text="${u.application}"></td>
+        <td th:text="${u.profile}"></td>
+        <td th:text="${u.label}"></td>
+        <td ><a th:href="@{/properties/qby(id=${u.id})}">更改</a></td>
+        <td><a th:href="@{/properties/delete(id=${u.id})}">删除</a></td>
+    </tr>
+    <tr><td colspan="8"><a th:href="@{/properties/addRequest}">添加一条数据</a></td></tr>
+</table>
+</body>
+</html>

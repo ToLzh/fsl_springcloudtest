@@ -9,9 +9,10 @@ spring:
       server:
         git:
           uri: https://github.com/ToLzh/fsl_springcloudtest.git
-#          basedir: D:\ideaProjects\fsl    # 会导致把项目还原，相当于从git把项目拉下来并覆盖原有的
+#          basedir: D:\ideaProjects\fsl\config    # 会导致把项目还原，相当于从git把项目拉下来并覆盖原有的
           search-paths:
             - config
+      label: master
   rabbitmq:
     host: localhost
     port: 5672
@@ -31,4 +32,4 @@ management:
   endpoints:
     web:
       exposure:
-        include: bus-refresh
+        include: "bus-refresh"
